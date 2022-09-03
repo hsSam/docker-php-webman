@@ -8,6 +8,11 @@
 ```
 docker build -t tinywan/docker-php-webman:7.4.29 .
 ```
+
+```
+podman build -t tinywan/docker-php-webman:8.1.10 .
+```
+
 ## Usage
 
 Start the Docker container:
@@ -17,6 +22,12 @@ Start the Docker container:
 ```
 docker run --rm -it -p 8787:8787 -v /home/www/webman:/app tinywan/docker-php-webman
 ```
+
+```
+sudo podman run --rm -it -p 8787:8787 --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
+```
+
+
 
 ### Windows
 
@@ -91,18 +102,17 @@ zlib
 [Zend Modules]
 Zend OPcache
 ```
-## Other 
+
+## Other
 
 delete all container
+
 ```
 docker rm `docker ps -a -q`
 ```
 
 delete all images
+
 ```
 docker rmi -f $(docker images -qa)
 ```
-
-
-
-
