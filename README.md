@@ -27,6 +27,13 @@ docker run --rm -it -p 8787:8787 -v /home/www/webman:/app tinywan/docker-php-web
 sudo podman run --rm -it -p 8787:8787 --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
 ```
 
+```
+ sudo podman exec -it webman /bin/sh
+ php -i |grep php.ini
+ php -i |grep opcache
+ php -m                                                                                                           
+```
+
 
 
 ### Windows
