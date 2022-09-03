@@ -27,6 +27,12 @@ docker run --rm -it -p 8787:8787 -e TZ=Asia/Shanghai -v /home/www/webman:/app ti
 sudo podman run --rm -it -p 8787:8787 -e TZ=Asia/Shanghai --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
 ```
 
+### port range
+
+```shell
+sudo podman run --rm -it -p 8787-8888:8787-8888 -e TZ=Asia/Shanghai --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
+```
+
 ### deamon run
 
 ```shell
