@@ -474,7 +474,7 @@ if [[ -z "${EXTENSIONS##*,redis,*}" ]]; then
     echo "---------- Install redis ----------"
     isPhpVersionGreaterOrEqual 7 4
     if [[ "$?" = "1" ]]; then
-        installExtensionFromTgz redis-5.3.4
+        installExtensionFromTgz redis-5.3.7
     else
         printf "\n" | pecl install redis-4.3.0
         docker-php-ext-enable redis
@@ -537,7 +537,7 @@ if [[ -z "${EXTENSIONS##*,event,*}" ]]; then
     fi
 
     echo "---------- Install event again ----------"
-    installExtensionFromTgz event-3.0.5  "--ini-name event.ini"
+    installExtensionFromTgz event-3.0.8  "--ini-name event.ini"
 fi
 
 if [[ -z "${EXTENSIONS##*,mongodb,*}" ]]; then
