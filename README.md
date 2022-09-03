@@ -19,22 +19,28 @@ Start the Docker container:
 
 ### Linux
 
-```
-docker run --rm -it -p 8787:8787 -v /home/www/webman:/app tinywan/docker-php-webman
-```
-
-```
-sudo podman run --rm -it -p 8787:8787 --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
+```shell
+docker run --rm -it -p 8787:8787 -e TZ=Asia/Shanghai -v /home/www/webman:/app tinywan/docker-php-webman
 ```
 
+```shell
+sudo podman run --rm -it -p 8787:8787 -e TZ=Asia/Shanghai --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
 ```
+
+### deamon run
+
+```shell
+sudo podman run -d -it --restart=always -e TZ=Asia/Shanghai -p 8787:8787 --name webman -v /data/workerman/start:/app tinywan/docker-php-webman:8.1.10
+```
+
+### php info
+
+```shell
  sudo podman exec -it webman /bin/sh
  php -i |grep php.ini
  php -i |grep opcache
  php -m                                                                                                           
 ```
-
-
 
 ### Windows
 
